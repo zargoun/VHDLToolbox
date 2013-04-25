@@ -84,24 +84,24 @@ Interface
 Ethernet Packet Structure
 -
 
-+-+-+--+--+++--+
++-------------+-------------+--------+--------+---------+---------+-----+
 | Description | destination | source | length | payload | padding | FSC |
 +=============+=============+========+========+=========+=========+=====+
 |    Bytes    |      6      |   6    |    2   |  0-1500 |   0-46  |  4  |
-+-+-+--+--+++--+
++-------------+-------------+--------+--------+---------+---------+-----+
 
 Notes:
 
-+ The *length* field is the length of the ethernet payload.
-+ The *Ethernet Output* block will automatically append the FSC to 
-  outgoing packets.
-+ The *FSC* of incoming packets will be checked, and bad packets will
-  be discarded. The *FSC* will be stripped from incoming packets.
-+ The length of the *payload* + *padding* must be 46-1500 bytes.
-+ Incoming packets of incorrect *length* will be discarded.
+    + The *length* field is the length of the ethernet payload.
+    + The *Ethernet Output* block will automatically append the FSC to 
+      outgoing packets.
+    + The *FSC* of incoming packets will be checked, and bad packets will
+      be discarded. The *FSC* will be stripped from incoming packets.
+    + The length of the *payload* + *padding* must be 46-1500 bytes.
+    + Incoming packets of incorrect *length* will be discarded.
 
 Usage
---
+-----
 
 Transmit
 ~~~~~~~~
